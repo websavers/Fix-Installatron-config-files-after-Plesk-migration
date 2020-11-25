@@ -9,3 +9,9 @@ for app_config_file in $(ls /var/www/vhosts/*/.appdata/current/*); do
 	echo "Updating domain $domain to new ID $ID in Installatron config file"
 	sed -i "s/owner=domain[0-9]\+/owner=domain$ID/" $app_config_file
 done
+
+echo "Running Installatron Cache Update"
+mv -f /var/installatron/data.db /var/installatron/data.db.bak20170414
+rm -f /var/installatron/data.db-*
+/usr/local/installatron/installatron --repair --recache
+/usr/local/installatron/installatron --send-update-report

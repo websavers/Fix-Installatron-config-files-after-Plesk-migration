@@ -11,7 +11,8 @@ for app_config_file in $(ls /var/www/vhosts/*/.appdata/current/*); do
 done
 
 echo "Running Installatron Cache Update"
-mv -f /var/installatron/data.db /var/installatron/data.db.bak20170414
+DATE=$(date -I)
+mv -f /var/installatron/data.db /var/installatron/data.db.bak$DATE
 rm -f /var/installatron/data.db-*
 /usr/local/installatron/installatron --repair --recache
 /usr/local/installatron/installatron --send-update-report

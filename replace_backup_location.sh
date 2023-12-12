@@ -9,11 +9,11 @@
 # IMPORTANT: You must manually find and set the location IDs below
 # The easiest way to find these is to go to:
 # Settings > Backup > Locations > click on the 'X apps' link
-# The heading will be - Search: bkloc:8c2b7bd2d90245e58c529a0a267d5e5f
+# The heading will be - Search: bkloc:XXXXXX
 # The value after bkloc: is your location ID.
 
-OLD_BACKUP_LOCATION=dc1dac9a010d491bae7721f339f28272
-NEW_BACKUP_LOCATION=8c2b7bd2d90245e58c529a0a267d5e5f
+OLD_BACKUP_LOCATION=
+NEW_BACKUP_LOCATION=
 
 BACKUP_CFG_FILES=$(grep -l -m 1 $OLD_BACKUP_LOCATION /var/www/vhosts/*/.appdata/backups/*)
 APP_CFG_FILES=$(grep -l -m 1 $OLD_BACKUP_LOCATION /var/www/vhosts/*/.appdata/current/*)
